@@ -2,6 +2,14 @@
 
 LIFE//OS is a local-first personal reality operating system for understanding where money, time, household resources, and upcoming responsibilities are flowing.
 
+## Recovery status
+
+This repository contains the complete recovered application as a SHA-256-verified archive split across `.recovery/part-*`. A clean `dev` or `build` command automatically verifies and restores the full source tree before Vite runs.
+
+Verified recovery archive SHA-256:
+
+`419f5a97add6bed20d724eba25ed34ec1c8be87ad95c250d6fed2a9f00dbf106`
+
 ## Run locally
 
 ```bash
@@ -14,9 +22,12 @@ The app seeds a complete demo dataset on first launch and persists changes in br
 ## Build
 
 ```bash
+npm install
 npm run build
 npm run preview
 ```
+
+The recovered source has been validated with a clean restore and production build.
 
 ## Deploy
 
@@ -27,7 +38,7 @@ Two static deployment paths are included:
 
 Render settings:
 
-- Build command: `npm ci && npm run build`
+- Build command: `npm install && npm run build`
 - Publish directory: `dist`
 - SPA fallback: every route rewrites to `index.html`
 
