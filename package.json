@@ -4,8 +4,9 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
+    "restore": "node scripts/restore.mjs",
+    "dev": "npm run restore && vite",
+    "build": "npm run restore && tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
