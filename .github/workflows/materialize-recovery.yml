@@ -24,7 +24,16 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          cat .recovery/part-* > /tmp/life-os.tar.gz.b64
+          cat \
+            .recovery/part-00 \
+            .recovery/part-01a \
+            .recovery/part-01b \
+            .recovery/part-01c \
+            .recovery/part-01d \
+            .recovery/part-02 \
+            .recovery/part-03 \
+            .recovery/part-04 \
+            > /tmp/life-os.tar.gz.b64
           base64 --decode /tmp/life-os.tar.gz.b64 > /tmp/life-os.tar.gz
           echo "419f5a97add6bed20d724eba25ed34ec1c8be87ad95c250d6fed2a9f00dbf106  /tmp/life-os.tar.gz" | sha256sum -c -
 
